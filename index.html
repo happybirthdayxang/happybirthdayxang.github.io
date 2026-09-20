@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="A birthday surprise.">
+<title>&#127880;</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage" aria-hidden="true"></div>
+  <div id="flash" aria-hidden="true"></div>
+
+  <main id="ui">
+    <h1 id="greeting" class="hidden" aria-live="polite"></h1>
+
+    <button id="letterBtn" class="pill hidden" type="button" aria-label="Read the letter">&#9993;&#65039; Read the letter</button>
+  </main>
+
+  <button id="muteBtn" type="button" aria-label="Mute sound" aria-pressed="false">&#128266;</button>
+
+  <div id="backdrop" class="hidden" aria-hidden="true"></div>
+  <section id="letterCard" class="hidden" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+    <button id="closeLetter" type="button" aria-label="Close letter">&times;</button>
+    <h2 id="letterTitle"></h2>
+    <div id="letterBody"></div>
+    <p id="letterSig"></p>
+    <button id="memoriesBtn" class="memories" type="button">&#127916; Open memories</button>
+  </section>
+
+  <div id="videoBackdrop" class="hidden" aria-hidden="true"></div>
+  <section id="videoCard" class="hidden" role="dialog" aria-modal="true" aria-label="Memories gallery">
+    <button id="closeVideo" type="button" aria-label="Close memories">&times;</button>
+    <div id="memStage">
+      <img id="memoriesImg" class="hidden" alt="Memory photo">
+      <video id="memoriesVideo" class="hidden" controls playsinline preload="none"></video>
+      <button id="galPrev" class="galArrow hidden" type="button" aria-label="Previous memory">&#8249;</button>
+      <button id="galNext" class="galArrow hidden" type="button" aria-label="Next memory">&#8250;</button>
+    </div>
+    <p id="galCount" class="hidden" aria-live="polite"></p>
+    <p id="videoFallback" class="hidden">Nothing here yet — add files named <code>1.png</code>, <code>2.mp4</code> … to <code>assets/memories/</code> and browse them here.</p>
+  </section>
+
+  <script src="vendor/pixi.min.js"></script>
+  <script src="config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/balloons.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
